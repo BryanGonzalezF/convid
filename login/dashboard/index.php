@@ -34,7 +34,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>País</th>                                
-                                <th>Edad</th>  
+                                <th>Edad</th> 
+                                <th>Centro de contencion</th> 
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -46,6 +47,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dat['id'] ?></td>
                                 <td><?php echo $dat['nombre'] ?></td>
                                 <td><?php echo $dat['pais'] ?></td>
+                                <td><?php echo $dat['centro de contencion']?></td>
                                 <td><?php echo $dat['edad'] ?></td>    
                                 <td></td>
                             </tr>
@@ -77,6 +79,10 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <div class="form-group">
                 <label for="pais" class="col-form-label">País:</label>
                 <input type="text" class="form-control" id="pais">
+                </div>                
+                <div class="form-group">
+                <label for="centro de contencion" class="col-form-label">Centro de contencion:</label>
+                <input type="text" class="form-control" id="centro de contencion">
                 </div>                
                 <div class="form-group">
                 <label for="edad" class="col-form-label">Edad:</label>

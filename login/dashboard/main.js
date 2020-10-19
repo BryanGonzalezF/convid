@@ -42,10 +42,12 @@ $(document).on("click", ".btnEditar", function(){
     id = parseInt(fila.find('td:eq(0)').text());
     nombre = fila.find('td:eq(1)').text();
     pais = fila.find('td:eq(2)').text();
-    edad = parseInt(fila.find('td:eq(3)').text());
+    centro_de_contencion = fila.find('td:eq(3)').text();
+    edad = parseInt(fila.find('td:eq(4)').text());
     
     $("#nombre").val(nombre);
     $("#pais").val(pais);
+    $("#centro de contencion").val(centro_de_contencion);
     $("#edad").val(edad);
     opcion = 2; //editar
     
@@ -79,6 +81,7 @@ $("#formPersonas").submit(function(e){
     e.preventDefault();    
     nombre = $.trim($("#nombre").val());
     pais = $.trim($("#pais").val());
+    centro_de_contencion = $.trim($("#centro de contencion").val());
     edad = $.trim($("#edad").val());    
     $.ajax({
         url: "bd/crud.php",
@@ -90,6 +93,7 @@ $("#formPersonas").submit(function(e){
             id = data[0].id;            
             nombre = data[0].nombre;
             pais = data[0].pais;
+            centro_de_contencion = data[0].centro_de_contencion;
             edad = data[0].edad;
             if(opcion == 1){tablaPersonas.row.add([id,nombre,pais,edad]).draw();}
             else{tablaPersonas.row(fila).data([id,nombre,pais,edad]).draw();}            
@@ -150,6 +154,7 @@ $(document).on("click", ".btnEditar", function(){
     $("#nombre").val(nombre);
     $("#region").val(pais);
     $("#edad").val(edad);
+    $("#centro de contencion").val(centro_de_contencion);
     $("#fechadesalida").val(fechadesalida);
     opcion = 2; //editar
     
@@ -189,16 +194,18 @@ $("#formPersonasSalida").submit(function(e){
         url: "bd/crud.php",
         type: "POST",
         dataType: "json",
-        data: {nombre:nombre, pais:pais, edad:edad,fechadesalida:fechadesalida, id:id, opcion:opcion},
+        data: {nombre:nombre, pais:pais, edad:edad,centro_de_contencion:centro_de_contencion,fechadesalida:fechadesalida, id:id, opcion:opcion},
         success: function(data){  
             console.log(data);
             id = data[0].id;            
             nombre = data[0].nombre;
             pais = data[0].pais;
+            centro_de_contencion = data[0].centro_de_contencion;
             edad = data[0].edad;
+            centro_de_contencion = data[0].centro_de_contencion
             fechadesalida = data[0].fechadesalida;
-            if(opcion == 1){tablaPersonasSalida.row.add([id,nombre,region,edad,fechadesalida]).draw();}
-            else{tablaPersonasSalida.row(fila).data([id,nombre,region,edad,fechadesalida]).draw();}            
+            if(opcion == 1){tablaPersonasSalida.row.add([id,nombre,region,centro_de_contencion,edad,fechadesalida]).draw();}
+            else{tablaPersonasSalida.row(fila).data([id,nombre,region,centro_de_contencion,edad,fechadesalida]).draw();}            
         }        
     });
     $("#modalCRUD").modal("hide");    

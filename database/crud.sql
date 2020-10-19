@@ -32,6 +32,7 @@ CREATE TABLE `personas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `pais` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `centro de contencion` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `edad` int(11) NOT NULL
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -40,18 +41,18 @@ CREATE TABLE `personas` (
 -- Volcado de datos para la tabla `personas`
 --
 
-INSERT INTO `personas` (`id`, `nombre`, `pais`, `edad`) VALUES
-(1, 'María', 'Colombia', 52),
-(2, 'Jorge', 'Argentina', 48),
-(3, 'Silvia', 'Venezuela', 25),
-(4, 'Ramiro Perez', 'Uruguay', 35),
-(5, 'Carlos', 'Colombia', 28),
-(6, 'Cristian', 'Francia', 22),
-(7, 'Roberto', 'Perú', 20),
-(8, 'Mauricio', 'Venezuela', 41),
-(9, 'Karina', 'México', 30),
-(10, 'José', 'Chile', 19),
-(11, 'Beatriz', 'Colombia', 25);
+INSERT INTO `personas` (`id`, `nombre`, `pais`,`centro de contencion`, `edad`) VALUES
+(1, 'María', 'Colombia','Zacatecoluca', 52),
+(2, 'Jorge', 'Argentina','Zacatecoluca', 48),
+(3, 'Silvia', 'Venezuela','Zacatecoluca', 25),
+(4, 'Ramiro Perez', 'Uruguay','Zacatecoluca', 35),
+(5, 'Carlos', 'Colombia','Zacatecoluca', 28),
+(6, 'Cristian', 'Francia','Zacatecoluca', 22),
+(7, 'Roberto', 'Perú','Zacatecoluca', 20),
+(8, 'Mauricio', 'Venezuela','Zacatecoluca', 41),
+(9, 'Karina', 'México','Zacatecoluca', 30),
+(10, 'José', 'Chile','Zacatecoluca', 19),
+(11, 'Beatriz', 'Colombia','Zacatecoluca', 25);
 
 --
 -- Índices para tablas volcadas
